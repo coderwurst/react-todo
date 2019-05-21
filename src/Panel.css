@@ -1,0 +1,16 @@
+.panel-area {
+    background-color: #EDEDED;
+    border: 4px #EDEDED solid;
+    border-radius: 2px;
+    max-width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.panel-title {
+    color: #282828;
+}
+
+.panel-content {
+    text-shadow: #282828;
+}

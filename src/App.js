@@ -7,21 +7,22 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      name: "Earth"
+      steps: 0
     }
-
-    setTimeout(() => {
-      this.setState ({
-        name: "Jupiter"
-      })
-    }, 3000);
   }
 
+  updateState = () => {
+    this.setState({
+      steps: this.state.steps + 1 
+    })
+  }
+  
   render() {
     return (
       <div className="App">
-        <h2>Hello {this.state.name}!</h2>
-        <p>{this.state.name.length}</p>
+        <h2>Worlds best Pedometer</h2>
+        <p>You have reached: {this.state.steps} steps!</p>
+        <button onClick={this.updateState} >step</button>
       </div>
     );
   }

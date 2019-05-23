@@ -7,22 +7,35 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      steps: 0
+      todos : [
+        "test1",
+        "test2",
+        "test3"
+      ]
     }
   }
 
-  updateState = () => {
+  addToList = () => {
+    let newToDos = this.state.todos;
+    newToDos.push("click");
     this.setState({
-      steps: this.state.steps + 1 
+      todos : newToDos
     })
   }
   
   render() {
     return (
       <div className="App">
-        <h2>Worlds best Pedometer</h2>
-        <p>You have reached: {this.state.steps} steps!</p>
-        <button onClick={this.updateState} >step</button>
+        <h2>TODO Liste</h2>
+        <ul>
+          {this.state.todos.map((element) => {
+            return (
+              <li>{element}</li>
+            )
+          })}
+        </ul>
+        <input placeholder="whats to be done"></input>
+        <button onClick={this.addToList}>add</button>
       </div>
     );
   }

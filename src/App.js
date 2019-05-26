@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TodoList from './TodoList';
+import TodoAdd from './TodoAdd';
 
 class App extends React.Component {
   
@@ -16,9 +17,9 @@ class App extends React.Component {
     }
   }
 
-  addToList = () => {
+  addToList = (title) =>  {
     let newToDos = this.state.todos;
-    newToDos.push({id: newToDos.length + 1, title: "click"});
+    newToDos.push({id: newToDos.length + 1, title: title});
     this.setState({
       todos : newToDos
     })
@@ -28,9 +29,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Sandbox</h1>
-        <TodoList list={this.state.todos} ></TodoList>
-        <input placeholder="whats to be done"></input>
-        <button onClick={this.addToList}>add</button>
+        <TodoList list={ this.state.todos } ></TodoList>
+        <TodoAdd onAdd={ this.addToList } ></TodoAdd>
       </div>
     );
   }

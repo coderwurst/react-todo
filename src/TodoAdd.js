@@ -27,8 +27,6 @@ class TodoAdd extends React.Component {
 
     render() {
 
-        let button = this.state.newTodo !== "" ? <button onClick={ this.onTodoAdd }>add</button> : null;
-
         return (
             <Panel title="Add new item">
                 <input 
@@ -37,7 +35,13 @@ class TodoAdd extends React.Component {
                     value={ this.state.newTodo }
                     placeholder="whats to be done">
                 </input>
-                { button }
+                { 
+                    this.state.newTodo !== "" ? <button 
+                                                    onClick={ this.onTodoAdd }>
+                                                        add
+                                                </button>
+                                            : null
+                 }
             </Panel>
         )
     }

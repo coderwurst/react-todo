@@ -10,9 +10,9 @@ class App extends React.Component {
 
     this.state = {
       todos : [
-        { id: 1, title: "test1"},
-        { id: 2, title: "test2"},
-        { id: 3, title: "test3"}
+        { id: 1, title: "Wash clothes"},
+        { id: 2, title: "Hoover Floor"},
+        { id: 3, title: "Clean Balcony"}
       ]
     }
   }

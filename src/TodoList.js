@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
+
 import './App.css';
 import Panel from './Panel';
 
@@ -17,6 +19,10 @@ class TodoList extends React.Component {
             </Panel>
         )
     }
+}
+
+TodoList.propTypes = {
+    list : PropTypes.array.isRequired
 }
 
 export default TodoList;

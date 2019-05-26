@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
+
 import './App.css';
 import Panel from './Panel';
 
@@ -36,16 +38,20 @@ class TodoAdd extends React.Component {
                     placeholder="whats to be done">
                 </input>
                 { 
-                    this.state.newTodo !== "" ? <button 
-                                                    onClick={ this.onTodoAdd }>
-                                                        add
-                                                </button>
-                                            : null
+                    this.state.newTodo !== "" 
+                                        ? <button 
+                                            onClick={ this.onTodoAdd }>
+                                                add
+                                            </button>
+                                        : null
                  }
             </Panel>
         )
     }
+}
 
+TodoAdd.propTypes = {
+    onAdd : PropTypes.func.isRequired
 }
 
 export default TodoAdd;

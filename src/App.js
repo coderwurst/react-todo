@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import TodoList from './TodoList';
 
 class App extends React.Component {
   
@@ -26,14 +27,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>TODO Liste</h2>
-        <ul>
-          {this.state.todos.map((element) => {
-            return (
-              <li key={element.id} >{element.title}</li>
-            )
-          })}
-        </ul>
+        <h1>Sandbox</h1>
+        <TodoList list={this.state.todos} ></TodoList>
         <input placeholder="whats to be done"></input>
         <button onClick={this.addToList}>add</button>
       </div>

@@ -8,16 +8,16 @@ class App extends React.Component {
 
     this.state = {
       todos : [
-        "test1",
-        "test2",
-        "test3"
+        { id: 1, title: "test1"},
+        { id: 2, title: "test2"},
+        { id: 3, title: "test3"}
       ]
     }
   }
 
   addToList = () => {
     let newToDos = this.state.todos;
-    newToDos.push("click");
+    newToDos.push({id: newToDos.length + 1, title: "click"});
     this.setState({
       todos : newToDos
     })
@@ -30,7 +30,7 @@ class App extends React.Component {
         <ul>
           {this.state.todos.map((element) => {
             return (
-              <li>{element}</li>
+              <li key={element.id} >{element.title}</li>
             )
           })}
         </ul>

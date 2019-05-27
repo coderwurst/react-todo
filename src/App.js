@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+import { connect } from 'react-redux'
+import { incrementCounter, decrementCounter } from './actions/index'
+
 class App extends React.Component {
   
   render() {
@@ -13,7 +16,19 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
-export default App;
+let mapStateToProps = (state) => {
+    return {
+        value: state
+    }
+}
+
+let mapDispatchToProps = {
+    onIncrement: incrementCounter,
+    onDecrement: decrementCounter
+}
+
+let ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default ConnectedApp;

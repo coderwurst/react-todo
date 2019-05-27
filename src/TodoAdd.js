@@ -40,7 +40,8 @@ class TodoAdd extends React.Component {
                 { 
                     this.state.newTodo !== "" 
                                         ? <button 
-                                            onClick={ this.onTodoAdd }>
+                                            onClick={ this.onTodoAdd }
+                                            >
                                                 add
                                             </button>
                                         : null

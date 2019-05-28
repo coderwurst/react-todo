@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from './App';
+import TodoList from './TodoList';
+
 import counter from './reducers/index';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -14,7 +16,10 @@ console.log(`initial state: ${store.getState()}`);
 
 ReactDOM.render(
     <Provider store={ store }>
-        <App />
+        <div>
+            <App />
+            <TodoList />
+        </div>
     </Provider>,
         document.getElementById('root')
 );

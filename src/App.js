@@ -20,7 +20,7 @@ class App extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        value: state
+        value: state.counter
     }
 }
 

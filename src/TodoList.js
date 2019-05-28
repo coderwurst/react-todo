@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './App.css';
 import Panel from './Panel';
+import { connect } from 'react-redux'
 
 class TodoList extends React.Component {
 
@@ -10,7 +11,7 @@ class TodoList extends React.Component {
         return (
             <Panel title="todo List">
             <ul>
-                {this.props.list.map((element) => {
+                {this.props.todos.map((element) => {
                 return (
                     <li key={element.id} >{element.title}</li>
                 )
@@ -21,8 +22,16 @@ class TodoList extends React.Component {
     }
 }
 
+let mapStateToProps = (state) => {
+    return {
+        todos: state.todos
+    }
+}
+
+let mapDispatchToProps = {}
+
 TodoList.propTypes = {
-    list : PropTypes.arrayOf(
+    todos : PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             title: PropTypes.string.isRequired
@@ -30,4 +39,6 @@ TodoList.propTypes = {
     ).isRequired
 }
 
-export default TodoList;
+let TodoListContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
+export default TodoListContainer;

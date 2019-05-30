@@ -6,12 +6,9 @@ let initialState = [
 
 function addTodo(state = initialState, action) { 
     if (action.type === "TODO_ADD") {
-        let newState = [];
-        for (let todo of state) {
-            newState.push({ id: todo.id, title: todo.title });
-        }
-        newState.push({ id: (newState.length + 1), title: action.title });
-        return newState;
+        return [].concat(state, [
+            { id: (state.length + 1), title: action.title }
+        ]);
     } else {
         return state; 
     }

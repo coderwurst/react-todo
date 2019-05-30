@@ -30,7 +30,7 @@ class TodoAdd extends React.Component {
     render() {
 
         return (
-            <Panel title="Add new item">
+            <Panel title="add new item">
                 <input 
                     type="text"
                     onChange={ this.inputChange }

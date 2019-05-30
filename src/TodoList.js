@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import './App.css';
 import Panel from './Panel';
+import TodoAdd from './TodoAdd';
+
 import { connect } from 'react-redux'
 import { addTodo } from './actions/index'
 
@@ -18,8 +20,7 @@ class TodoList extends React.Component {
                     )
                     })}
                 </ul>
-                <input></input>
-                <button onClick={ () => this.props.addTodo("3. test") } >add todo</button>
+                <TodoAdd onAdd={ (title) => { this.props.addTodo(title) }}></TodoAdd>
             </Panel>
         )
     }

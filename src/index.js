@@ -12,7 +12,6 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 
 let store = createStore(counter);
-console.log(`initial state: ${store.getState()}`);
 
 ReactDOM.render(
     <Provider store={ store }>

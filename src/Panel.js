@@ -8,7 +8,7 @@ class Panel extends React.Component {
         return (
             <div className="panel-area">
                 <h2 className="panel-title">{this.props.title}</h2>
-                <p className="panel-content">{this.props.children}</p>
+                <div className="panel-content">{this.props.children}</div>
             </div>
         );
     }

@@ -1,13 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import './index.css';
-import App from './App';
-import TodoList from './TodoList';
+import './index.css'
+import App from './App'
+import TodoList from './TodoList'
+import Home from './Home'
 
-import counter from './reducers/index';
+import counter from './reducers/index'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+
+import { HashRouter, Route } from 'react-router-dom'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -15,10 +18,13 @@ let store = createStore(counter);
 
 ReactDOM.render(
     <Provider store={ store }>
-        <div>
-            <App />
-            <TodoList />
-        </div>
+        <HashRouter>
+            <div>
+                <Route exact={ true } path="/" component={ Home } />
+                <Route path="/clicker" component={ App } />
+                <Route path="/todo" component={ TodoList } />
+            </div>
+        </HashRouter>
     </Provider>,
         document.getElementById('root')
 );

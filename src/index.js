@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 
 import './index.css'
 import App from './App'
-import TodoList from './TodoList'
 import Home from './Home'
+import Navigation from './Navigation'
+import TodoList from './TodoList'
 
 import counter from './reducers/index'
 import { createStore } from 'redux'
@@ -20,6 +21,8 @@ ReactDOM.render(
     <Provider store={ store }>
         <HashRouter>
             <div>
+                <Navigation />
+
                 <Route exact={ true } path="/" component={ Home } />
                 <Route path="/clicker" component={ App } />
                 <Route path="/todo" component={ TodoList } />

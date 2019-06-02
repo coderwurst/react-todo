@@ -12,12 +12,14 @@ class Navigation extends React.Component {
                 <li><Link to="/">HOME</Link></li>
                 <li><Link to="/todo">TODO ({ this.props.todoCount })</Link></li>
                 <li><Link to="/clicker">CLICKER ({ this.props.counter })</Link></li>
+                <li><Link to="/wiki">WIKI SEARCH</Link></li>
             </ul>
 
         )
     }
 }
 
+// retrieve values from state
 let mapStateToProps = (state) => {
     return {
         counter: state.counter,

@@ -32,6 +32,7 @@ let mapStateToProps = (state) => {
     }
 }
 
+// assign prop funciton to imported action
 let mapDispatchToProps = {
     addTodo: addTodo
 }

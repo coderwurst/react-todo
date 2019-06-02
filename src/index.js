@@ -6,6 +6,7 @@ import App from './App'
 import Home from './Home'
 import Navigation from './Navigation'
 import TodoList from './TodoList'
+import WikiSearch from './WikiSearch'
 
 import counter from './reducers/index'
 import { createStore } from 'redux'
@@ -26,6 +27,7 @@ ReactDOM.render(
                 <Route exact={ true } path="/" component={ Home } />
                 <Route path="/clicker" component={ App } />
                 <Route path="/todo" component={ TodoList } />
+                <Route path="/wiki" component={ WikiSearch } />
             </div>
         </HashRouter>
     </Provider>,

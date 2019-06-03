@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import WikiSearchInput from "./WikiSearchInput"
+import WikiSearchInput from "./WikiSearchInput";
 
 class WikiSearch extends React.Component {
 

@@ -12,16 +12,19 @@ class TodoList extends React.Component {
 
     render () {
         return (
-            <Panel title="todo List">
-                <ul>
-                    {this.props.todos.map((element) => {
-                    return (
-                        <li key={element.id} >{element.title}</li>
-                    )
-                    })}
-                </ul>
-                <TodoAdd onAdd={ (title) => { this.props.addTodo(title) }}></TodoAdd>
-            </Panel>
+            <div>
+                <h1>Todo List</h1>
+                <Panel title="todo List">
+                    <ul>
+                        {this.props.todos.map((element) => {
+                        return (
+                            <li key={element.id} >{element.title}</li>
+                        )
+                        })}
+                    </ul>
+                    <TodoAdd onAdd={ (title) => { this.props.addTodo(title) }}></TodoAdd>
+                </Panel>
+            </div>
         )
     }
 }

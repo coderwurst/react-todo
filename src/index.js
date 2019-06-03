@@ -1,22 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import './index.css'
-import App from './App'
-import Home from './Home'
-import Navigation from './Navigation'
-import TodoList from './TodoList'
-import WikiSearch from './WikiSearch'
+import './index.css';
+import App from './App';
+import Home from './Home';
+import Navigation from './Navigation';
+import TodoList from './TodoList';
+import WikiSearch from './WikiSearch';
+import WikiResults from './WikiResults';
 
-import counter from './reducers/index'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import counter from './reducers/index';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 
-let store = createStore(counter);
+let store = createStore(counter, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={ store }>
@@ -27,7 +29,9 @@ ReactDOM.render(
                 <Route exact={ true } path="/" component={ Home } />
                 <Route path="/clicker" component={ App } />
                 <Route path="/todo" component={ TodoList } />
+
                 <Route path="/wiki" component={ WikiSearch } />
+                <Route path="/wiki-results/:search" component={ WikiResults } />
             </div>
         </HashRouter>
     </Provider>,
